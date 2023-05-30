@@ -1,13 +1,13 @@
 name: Start cron products update
 
 on:
-#   schedule:
-#   - cron: "0 6 * * *"
+  schedule:
+  - cron: "0 6 * * *"
   workflow_dispatch:
 
     
 jobs:
-  test_schedule:
+  update_products:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
