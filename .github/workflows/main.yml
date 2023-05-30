@@ -1,0 +1,22 @@
+name: Start cron products update
+
+on:
+#   schedule:
+#   - cron: "0 6 * * *"
+  workflow_dispatch:
+
+    
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.7.0
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: pip3 install requests
+      - name: Cron products update
+        run: python3 import.py
